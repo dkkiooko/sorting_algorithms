@@ -44,4 +44,6 @@ void counting_sort(int *array, size_t size)
 	{
 		array[j] = output[j];
 	}
+	free(count);
+	free(output);
 }
