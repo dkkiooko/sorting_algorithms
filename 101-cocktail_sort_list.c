@@ -26,12 +26,12 @@ void swap(listint_t *lhs, listint_t *rhs)
 */
 void cocktail_forward(listint_t **list, listint_t *head)
 {
-	static listint_t *stop;
+
 	static listint_t *curr;
 	static int flag;
 
 	flag = 0;
-	while (head != stop && (curr = head, head = head->next))
+	while (1 && (curr = head, head = head->next))
 	{
 		if (curr->n > head->n)
 		{
@@ -45,7 +45,7 @@ void cocktail_forward(listint_t **list, listint_t *head)
 	}
 	if (flag)
 	{
-		stop = curr;
+
 		cocktail_backward(list, curr);
 	}
 }
@@ -57,12 +57,12 @@ void cocktail_forward(listint_t **list, listint_t *head)
 */
 void cocktail_backward(listint_t **list, listint_t *tail)
 {
-	static listint_t *stop;
+
 	static listint_t *curr;
 	static int flag;
 
 	flag = 0;
-	while (tail != stop && (curr = tail, tail = tail->prev))
+	while (1 && (curr = tail, tail = tail->prev))
 	{
 		if (tail->n > curr->n)
 		{
@@ -76,7 +76,7 @@ void cocktail_backward(listint_t **list, listint_t *tail)
 	}
 	if (flag)
 	{
-		stop = curr;
+
 		cocktail_forward(list, curr);
 	}
 }
